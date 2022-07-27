@@ -2,6 +2,7 @@ class Operator {
   private credentials: string;
   private identification: string;
   private fullName: string;
+
   private rank: number;
   private operations: number;
   private status: boolean;
@@ -25,6 +26,7 @@ class Operator {
       credentials: this.credentials,
       id: this.identification,
       fullName: this.fullName,
+
       rank: this.rank,
       operations: this.operations,
       status: this.status,
