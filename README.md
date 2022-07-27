@@ -1,5 +1,5 @@
 # :briefcase: warchief API
-![](https://img.shields.io/badge/warchief-developing-yellow) ![](https://img.shields.io/badge/npm-8.13.2-green) ![](https://img.shields.io/badge/node-v17.6.0-green)
+![](https://img.shields.io/badge/warchief-developing-yellow) ![](https://img.shields.io/badge/npm-8.13.2-green) ![](https://img.shields.io/badge/node-v17.6.0-green) ![](https://img.shields.io/badge/macabresoft-purple)
 
 Warchief soluciona los problemas de datos e interacción que suelen tener los juegos de roles en los hoteles virtuales de Habbo. Algunas características vienen específicas para un roleplay en concreto, sin embargo, hay otras que logran aplicarse indiferentes al género: acción, drama, terror, entre otros. 
 
