@@ -1,6 +1,9 @@
-class Operator {
-  private credentials: string;
-  private identification: string;
+import { Credentials } from './Credentials';
+import { Identification } from './Identification';
+
+export class Operator {
+  private credentials: Credentials;
+  private identification: Identification;
   private fullName: string;
 
   private rank: number;
@@ -10,21 +13,25 @@ class Operator {
 
   //non exist awards and score variable.
 
-  public constructor(credentials: string, identification: string, fullName: string) {
+  public constructor(credentials: Credentials, identification: Identification, fullName: string) {
     this.credentials = credentials;
     this.identification = identification;
     this.fullName = fullName;
 
     this.rank = 1;
     this.operations = 0;
-    this.status = true;
+    this.status = false;
     this.score = 10;
+  }
+
+  public static create(credentials: string, identification: string, fullName: string) {
+    return new Operator(new Credentials(credentials), new Identification(identification), fullName);
   }
 
   public details(): object {
     return {
-      credentials: this.credentials,
-      id: this.identification,
+      credentials: this.credentials.value(),
+      id: this.identification.value(),
       fullName: this.fullName,
 
       rank: this.rank,
