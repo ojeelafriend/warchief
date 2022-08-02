@@ -3,7 +3,6 @@ export class Identification {
 
   public constructor(id: string) {
     this.checkLong(id);
-
     this.id = id;
   }
 
