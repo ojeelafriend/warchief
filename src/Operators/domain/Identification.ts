@@ -8,7 +8,7 @@ export class Identification {
 
   public checkLong(id: string) {
     if (id.length !== 8) {
-      throw new Error(`Identification require 8 digits`);
+      throw new Error(`Identification require 8 digits`).message;
     }
   }
 
