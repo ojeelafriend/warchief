@@ -2,16 +2,25 @@ import { Pool } from 'pg';
 import { IRepositoryConnection } from '../domain/IRepositoryConnection';
 
 export class PostgreSQLConnection implements IRepositoryConnection {
-  private pool: Pool;
+  public pool!: Pool;
 
-  public createPool(port: number, host: string, database: string, user: string, password: string): void {
-    this.pool = new Pool({ port, host, database, user, password });
+  public createPool(
+    host: string | undefined,
+    database: string | undefined,
+    user: string | undefined,
+    password: string | undefined
+  ): void {
+    this.pool = new Pool({ host, database, user, password });
   }
 
-  async connect(): Promise<void> {
-    await this.pool.connect().catch((reason) => console.log('Pool has started'));
+  public async connect(): Promise<void> {
+    await this.pool
+      .connect()
+      .then(() => console.log('Pool has started'))
+      .catch((reason) => console.log(`Pool has error: ${reason}`));
   }
-  async disconnect(): Promise<void> {
+
+  public async disconnect(): Promise<void> {
     this.pool.end(() => console.log('Pool has ended'));
   }
 }
