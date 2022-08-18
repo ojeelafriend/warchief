@@ -9,15 +9,15 @@ type opdata = {
 
 export class Creator {
   private repository: IRepository;
-  private data: opdata;
 
-  public constructor(repository: IRepository, data: opdata) {
+  public constructor(repository: IRepository) {
     this.repository = repository;
-    this.data = data;
   }
 
-  public run() {
-    const { credentials, identification, fullName } = this.data;
-    this.repository.save(Operator.create(credentials, identification, fullName));
+  public async run(data: opdata) {
+    const { credentials, identification, fullName } = data;
+    const operator = Operator.create(credentials, identification, fullName);
+
+    await this.repository.save(operator);
   }
 }
