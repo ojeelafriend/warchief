@@ -7,8 +7,8 @@ export class Credentials {
   }
 
   private isDiscordCompleteId(discordCompleteId: string) {
-    if (!/[#]..../.test(discordCompleteId)) {
-      throw new Error('Discord name is invalid. Example: operator#2032');
+    if (!/[#]..../.test(discordCompleteId) || /[#]...../.test(discordCompleteId)) {
+      throw new Error('Discord name is invalid. Example: operator#2032').message;
     }
   }
 
