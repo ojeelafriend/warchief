@@ -11,8 +11,6 @@ export class Operator {
   private status: boolean;
   private score: number;
 
-  //non exist awards and score variable.
-
   public constructor(credentials: Credentials, identification: Identification, fullName: string) {
     this.credentials = credentials;
     this.identification = identification;
@@ -28,10 +26,10 @@ export class Operator {
     return new Operator(new Credentials(credentials), new Identification(identification), fullName);
   }
 
-  public details(): object {
+  public details(): any {
     return {
       credentials: this.credentials.value(),
-      id: this.identification.value(),
+      identification: this.identification.value(),
       fullName: this.fullName,
 
       rank: this.rank,
