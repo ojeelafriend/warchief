@@ -1,5 +1,10 @@
 export interface IRepositoryConnection {
-  createPool(port: number, host: string, db: string, user: string, password: string): void;
+  createPool(
+    host: string | undefined,
+    database: string | undefined,
+    user: string | undefined,
+    password: string | undefined
+  ): void;
   connect(): Promise<void>;
   disconnect(): Promise<void>;
 }
